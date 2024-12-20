@@ -92,6 +92,7 @@
 import { ref, computed } from "vue";
 import { defineProps } from "vue";
 import emailjs from 'emailjs-com';
+import Swal from 'sweetalert2';
 
 const props = defineProps({
     language: {
@@ -149,11 +150,18 @@ const sendEmail = (e) => {
 
     emailjs.send(SERVICE_ID, TEMPLATE_ID, templateParams, PUBLIC_KEY)
         .then((result) => {
-
-            alert('Message sent successfully!',SERVICE_ID, TEMPLATE_ID, templateParams, PUBLIC_KEY);
+            Swal.fire({
+                icon: 'success',
+                title: 'Mensaje enviado',
+                text: '¡Tu mensaje se ha enviado exitosamente!'
+            });
         }, (error) => {
             console.log(error.text);
-            alert('Failed to send message, please try again.');
+            Swal.fire({
+                icon: 'error',
+                title: 'Error',
+                text: 'Fallo al enviar el mensaje, por favor intenta de nuevo.'
+            });
         });
 };
 </script>
