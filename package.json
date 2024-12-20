@@ -12,6 +12,10 @@
   "dependencies": {
     "nuxt": "^3.14.1592",
     "vue": "latest",
-    "vue-router": "latest"
+    "vue-router": "latest",
+    "vue3-carousel": "^0.4.0",
+    "aos": "^2.3.4",
+    "emailjs-com": "^3.2.0",
+    "headroom.js": "^0.12.0"
   }
 }
