@@ -61,17 +61,16 @@
 <script setup>
 import { ref, computed } from 'vue';
 
-// development route
-// const assetsRoute = 'src/assets/';
-
-// production route
-const assetsRoute = '/assets/'; 
+// Import images directly
+import apiRestLaravel from '@/assets/api-rest-laravel.png';
+// Import other images as needed
+// import anotherImage from '@/assets/another-image.png';
 
 const Projects = ref([
     {
         id: 1,
         category: 'Backend',
-        image: assetsRoute + 'api-rest-laravel.png',
+        image: apiRestLaravel, // Use the imported image
         title: 'project 1',
         description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic tenetur quasi ipsam labore sapiente, accusamus necessitatibus laboriosam non voluptas inventore deserunt dolore modi ex, praesentium at provident nihil magni ratione!',
         technologies: ['Laravel', 'Sail', 'Scribe'],
@@ -81,7 +80,7 @@ const Projects = ref([
     {
         id: 2,
         category: 'Backend',
-        image: assetsRoute + 'api-rest-laravel.png',
+        image: apiRestLaravel,
         title: 'project 1',
         description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic tenetur quasi ipsam labore sapiente, accusamus necessitatibus laboriosam non voluptas inventore deserunt dolore modi ex, praesentium at provident nihil magni ratione!',
         technologies: ['Laravel', 'Sail', 'Scribe'],
@@ -91,7 +90,7 @@ const Projects = ref([
     {
         id: 3,
         category: 'Backend',
-        image: assetsRoute + 'api-rest-laravel.png',
+        image: apiRestLaravel,
         title: 'project 1',
         description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic tenetur quasi ipsam labore sapiente, accusamus necessitatibus laboriosam non voluptas inventore deserunt dolore modi ex, praesentium at provident nihil magni ratione!',
         technologies: ['Laravel', 'Sail', 'Scribe'],
@@ -101,7 +100,7 @@ const Projects = ref([
     {
         id: 4,
         category: 'Backend',
-        image: assetsRoute + 'api-rest-laravel.png',
+        image: apiRestLaravel,
         title: 'project 1',
         description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic tenetur quasi ipsam labore sapiente, accusamus necessitatibus laboriosam non voluptas inventore deserunt dolore modi ex, praesentium at provident nihil magni ratione!',
         technologies: ['Laravel', 'Sail', 'Scribe'],
@@ -111,7 +110,7 @@ const Projects = ref([
     {
         id: 5,
         category: 'Backend',
-        image: assetsRoute + 'api-rest-laravel.png',
+        image: apiRestLaravel,
         title: 'project 1',
         description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic tenetur quasi ipsam labore sapiente, accusamus necessitatibus laboriosam non voluptas inventore deserunt dolore modi ex, praesentium at provident nihil magni ratione!',
         technologies: ['Laravel', 'Sail', 'Scribe'],
@@ -121,7 +120,7 @@ const Projects = ref([
     {
         id: 6,
         category: 'Backend',
-        image: assetsRoute + 'api-rest-laravel.png',
+        image: apiRestLaravel,
         title: 'project 1',
         description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic tenetur quasi ipsam labore sapiente, accusamus necessitatibus laboriosam non voluptas inventore deserunt dolore modi ex, praesentium at provident nihil magni ratione!',
         technologies: ['Laravel', 'Sail', 'Scribe'],
