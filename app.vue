@@ -26,23 +26,6 @@
 	</div>
 </template>
 
-<script setup>
-import { defineAsyncComponent } from "vue";
-
-//Import Components Asynchronously
-const Navbar = defineAsyncComponent(() => import("@/components/NavBar.vue"));
-const HeroSection = defineAsyncComponent(() => import("@/components/HeroSection.vue"));
-const ServicesSection = defineAsyncComponent(() => import("@/components/ServicesSection.vue"));
-const AboutSection = defineAsyncComponent(() => import("@/components/AboutSection.vue"));
-const ExperienceAndSkills = defineAsyncComponent(() => import("@/components/ExperienceAndSkills.vue"));
-const LatestProjectsSection = defineAsyncComponent(() => import("@/components/LatestProjectsSection.vue"));
-const ContactSection = defineAsyncComponent(() => import("@/components/ContactSection.vue"));
-const TestimonialsSection = defineAsyncComponent(() => import("@/components/TestimonialsSection.vue"));
-const Footer = defineAsyncComponent(() => import("@/components/Footer.vue"));
-const BackToTop = defineAsyncComponent(() => import("@/components/BackToTop.vue"));
-import loadingSpinner from './components/LoadingSpinner.vue';
-
-</script>
 <style>
 *{
   scrollbar-width: thin;
