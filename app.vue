@@ -1,31 +1,42 @@
 <template>
 	<div class="bg-[#111827] min-h-screen">
-		<!-- Wrap components in Suspense to handle loading -->
-		<Suspense>
-			<template #default>
-				<!-- Wrap all Components inside a single root element -->
-				<div>
-					<Navbar />
-					<HeroSection />
-					<ServicesSection />
-					<AboutSection />
-					<ExperienceAndSkills />
-					<LatestProjectsSection />
-					<ContactSection />
-					<!-- <TestimonialsSection /> -->
-					<Footer />
-					<BackToTop />
-				</div>
-			</template>
-			<template #fallback>
-				<div class="flex justify-center items-center min-h-screen">
-					<loadingSpinner />
-				</div>
-			</template>
-		</Suspense>
+    <template v-show="isAppLoaded">
+      <div>
+        <Navbar />
+        <HeroSection />
+        <ServicesSection />
+        <AboutSection />
+        <ExperienceAndSkills />
+        <LatestProjectsSection />
+        <ContactSection />
+        <!-- <TestimonialsSection /> -->
+        <Footer />
+        <BackToTop />
+      </div>
+    </template>
+
+    <template v-if="!isAppLoaded">
+      <div class="flex items-center justify-center h-screen">
+        <loadingSpinner />
+      </div>
+    </template>
+
 	</div>
 </template>
 
+<script setup>
+import { defineAsyncComponent, ref, onMounted  } from "vue";
+
+//Import Components Asynchronously
+const Navbar = defineAsyncComponent(() => import("@/components/NavBar.vue"));
+
+const isAppLoaded = ref(false);
+
+onMounted(() => {
+  isAppLoaded.value = true;
+});
+
+</script>
 <style>
 *{
   scrollbar-width: thin;
