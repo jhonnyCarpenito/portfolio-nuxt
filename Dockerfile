@@ -20,9 +20,9 @@ RUN npm install --only=production
 
 COPY --from=builder /app/.output ./.output
 
-ENV NITRO_PORT=3000
+ENV NITRO_PORT=80
 ENV HOST=0.0.0.0
 
-EXPOSE 3000
+EXPOSE 80
 
 CMD ["node", ".output/server/index.mjs"]
