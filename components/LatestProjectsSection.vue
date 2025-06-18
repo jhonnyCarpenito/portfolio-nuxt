@@ -71,11 +71,11 @@ const Projects = ref([
         id: 1,
         category: 'Backend',
         image: apiRestLaravel, // Use the imported image
-        title: 'project 1',
-        description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic tenetur quasi ipsam labore sapiente, accusamus necessitatibus laboriosam non voluptas inventore deserunt dolore modi ex, praesentium at provident nihil magni ratione!',
+        title: 'CRUD API REST',
+        description: 'Este proyecto es una API desarrollada con Laravel 11, diseñada como un CRUD (Create, Read, Update, Delete) que permite realizar operaciones básicas sobre recursos.',
         technologies: ['Laravel', 'Sail', 'Scribe'],
         gitURL: 'https://gitlab.com/Carpenito/laravel-11-crud-api',
-        webURL: 'https://laravel-11-crud-api.app.jhonnycarpenito.site/'
+        webURL: 'https://laravel-11-crud-api.apps.jhonnycarpenito.com'
     },
     {
         id: 2,
