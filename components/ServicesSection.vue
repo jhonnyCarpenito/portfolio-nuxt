@@ -52,7 +52,7 @@ const serviceItems = {
         },
         {
             id: 3,
-            icon: 'https://img.icons8.com/external-solid-design-circle/100/ffffff/external-Mobile-Development-digital-marketing-solid-design-circle.png',
+            icon: 'https://img.icons8.com/ios-filled/100/ffffff/phonelink-setup.png',
             name: 'Desarrollo Responsive',
             description: 'Diseño y desarrollo de interfaces adaptativas que ofrecen una experiencia óptima en cualquier dispositivo.'
         },
@@ -90,7 +90,7 @@ const serviceItems = {
         },
         {
             id: 3,
-            icon: 'https://img.icons8.com/external-solid-design-circle/100/ffffff/external-Mobile-Development-digital-marketing-solid-design-circle.png',
+            icon: 'https://img.icons8.com/ios-filled/100/ffffff/phonelink-setup.png',
             name: 'Responsive Development',
             description: 'Design and development of adaptive interfaces that provide an optimal experience on any device.'
         },
