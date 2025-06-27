@@ -63,8 +63,14 @@ const contentItems = {
             {
                 id: 1,
                 role: 'Desarrollador Full Stack',
+                company: 'Lunave - Mexico',
+                date: 'Enero 2025 - Actualidad'
+            },
+            {
+                id: 1,
+                role: 'Desarrollador Full Stack',
                 company: 'Ubbitt - Mexico',
-                date: 'Julio 2024 - Actualidad'
+                date: 'Julio 2024 - Septiembre 2024'
             },
             {
                 id: 2,
@@ -93,23 +99,29 @@ const contentItems = {
             {
                 id: 1,
                 role: 'Full Stack Developer',
-                company: 'Ubbitt - Mexico',
-                date: 'July 2024 - Present'
+                company: 'Lunave - Mexico',
+                date: 'January 2025 - Present'
             },
             {
                 id: 2,
+                role: 'Full Stack Developer',
+                company: 'Ubbitt - Mexico',
+                date: 'July 2024 - September 2024'
+            },
+            {
+                id: 3,
                 role: 'Frontend Developer',
                 company: 'Meat Group - Chile',
                 date: 'August 2023 - July 2024'
             },
             {
-                id: 3,
+                id: 4,
                 role: 'Full Stack Developer',
                 company: 'Grupo Hostienda - Spain',
                 date: 'July 2022 - August 2023'
             },
             {
-                id: 4,
+                id: 5,
                 role: 'Systems Coordinator',
                 company: 'Guayana Customs Brokers - Venezuela',
                 date: 'July 2016 - July 2022'
