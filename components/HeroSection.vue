@@ -71,16 +71,24 @@ const props = defineProps({
     }
 });
 
-let information = {
-    en:{
+// Inicio: julio 2016 — se cuentan solo años completos
+const startDate = new Date(2016, 6, 1); // 6 = julio (0-indexed)
+const today = new Date();
+let yearsOfExperience = today.getFullYear() - startDate.getFullYear();
+if (today.getMonth() < startDate.getMonth() || (today.getMonth() === startDate.getMonth() && today.getDate() < startDate.getDate())) {
+    yearsOfExperience--;
+}
+
+const information = {
+    en: {
         title: "Hi, I'm Jhonny",
-        description: "I am a Full Stack Developer with 8 years of experience building modern and functional websites using Laravel and Vue.js. I excel in web layout design and backend development, focusing on scalable and secure systems. If you value quality and attention to detail, you're in the right place.",
+        description: `I am a Full Stack Developer with ${yearsOfExperience} years of experience building modern and functional websites using Laravel and Vue.js. I excel in web layout design and backend development, focusing on scalable and secure systems. If you value quality and attention to detail, you're in the right place.`,
         buttonHire: "Hire Me",
         buttonDownload: "Download resume",
     },
-    es:{
+    es: {
         title: "Hola, soy Jhonny",
-        description: "Soy un desarrollador Full Stack con 8 años de experiencia creando sitios web modernos y funcionales con Laravel y Vue.js. Destaco en la maquetación web y en el desarrollo backend, enfocado en sistemas escalables y seguros. Si buscas calidad y atención al detalle, estás en el lugar indicado.",
+        description: `Soy un desarrollador Full Stack con ${yearsOfExperience} años de experiencia creando sitios web modernos y funcionales con Laravel y Vue.js. Destaco en la maquetación web y en el desarrollo backend, enfocado en sistemas escalables y seguros. Si buscas calidad y atención al detalle, estás en el lugar indicado.`,
         buttonHire: "Contrátame",
         buttonDownload: "Descargar CV",
     },
