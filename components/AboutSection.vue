@@ -30,15 +30,15 @@
                 <p class="text-base lg:text-lg mt-8 py-8">{{ content.aboutDescription }}</p>
                 <div class="grid grid-cols-3 gap-4 max-w-lg pt-8">
                     <div class="text-center rounded-xl bg-[#111a3e] shadow-lg border border-[#1f1641] p-3">
-                        <h3 class="text-white font-bold text-xl sm:text-2xl lg:text-3xl">+200</h3>
+                        <h3 class="text-white font-bold text-xl sm:text-2xl lg:text-3xl">+100</h3>
                         <p class="text-sm sm:text-base text-gray-300">{{ content.happyClient }}</p>
                     </div>
                     <div class="text-center rounded-xl bg-[#111a3e] shadow-lg border border-[#1f1641] p-3">
-                        <h3 class="text-white font-bold text-xl sm:text-2xl lg:text-3xl">+300</h3>
+                        <h3 class="text-white font-bold text-xl sm:text-2xl lg:text-3xl">+100</h3>
                         <p class="text-sm sm:text-base text-gray-300">{{ content.project }}</p>
                     </div>
                     <div class="text-center rounded-xl bg-[#111a3e] shadow-lg border border-[#1f1641] p-3">
-                        <h3 class="text-white font-bold text-xl sm:text-2xl lg:text-3xl">+8</h3>
+                        <h3 class="text-white font-bold text-xl sm:text-2xl lg:text-3xl">+{{ yearsOfExperience }}</h3>
                         <p class="text-sm sm:text-base text-gray-300">{{ content.yearsExperience }}</p>
                     </div>
                 </div>
@@ -57,6 +57,14 @@ const props = defineProps({
         default: 'es'
     }
 });
+
+// Misma lógica que HeroSection: julio 2016, años completos
+const startDate = new Date(2016, 6, 1);
+const today = new Date();
+let yearsOfExperience = today.getFullYear() - startDate.getFullYear();
+if (today.getMonth() < startDate.getMonth() || (today.getMonth() === startDate.getMonth() && today.getDate() < startDate.getDate())) {
+    yearsOfExperience--;
+}
 
 const education = ref([
     {
