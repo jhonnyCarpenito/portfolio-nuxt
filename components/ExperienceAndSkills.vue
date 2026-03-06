@@ -64,7 +64,7 @@ const contentItems = {
                 id: 1,
                 role: 'Desarrollador Full Stack',
                 company: 'Lunave - Mexico',
-                date: 'Enero 2025 - Actualidad'
+                date: 'Enero 2025 - Enero 2026'
             },
             {
                 id: 1,
