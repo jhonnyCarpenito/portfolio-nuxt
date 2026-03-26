@@ -94,6 +94,7 @@ function screenshotPreviewUrl(webUrl) {
 }
 
 const loadedById = ref({})
+const lastImageById = ref({})
 
 function markLoaded(id) {
     loadedById.value[id] = true
@@ -183,9 +184,13 @@ const filteredProjects = computed(() => {
 watch(
     () => filteredProjects.value.map((p) => ({ id: p.id, image: p.image })),
     (list) => {
-        // Cuando cambia la lista/imagen, reseteamos el loading para ese id.
+        // Resetear loading solo si cambia el src (o si es un id nuevo).
         for (const item of list) {
-            loadedById.value[item.id] = false
+            const prev = lastImageById.value[item.id]
+            if (prev === undefined || prev !== item.image) {
+                loadedById.value[item.id] = false
+                lastImageById.value[item.id] = item.image
+            }
         }
     },
     { immediate: true }
