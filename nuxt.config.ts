@@ -7,5 +7,9 @@ export default defineNuxtConfig({
   },
   compatibilityDate: '2024-11-01',
   devtools: { enabled: true },
-  modules: ['nuxt-aos', '@nuxtjs/tailwindcss']
+  modules: ['nuxt-aos', '@nuxtjs/tailwindcss'],
+  runtimeConfig: {
+    screenshotApiUrl: process.env.SCREENSHOT_API_URL,
+    screenshotApiKey: process.env.SCREENSHOT_API_KEY,
+  },
 })
