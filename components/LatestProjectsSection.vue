@@ -14,12 +14,20 @@
                 data-aos="fade-right">
                 <div v-for="project in filteredProjects" :key="project.id">
                     <div class="h-52 md:h-[24rem] rounded-t-xl relative group overflow-hidden bg-[#111a3e]">
+                        <div
+                            v-if="!isLoaded(project.id)"
+                            class="absolute inset-0 z-10 flex items-center justify-center bg-black/30"
+                            aria-label="Cargando miniatura"
+                        >
+                            <div class="h-10 w-10 rounded-full border-4 border-white/30 border-t-white animate-spin" />
+                        </div>
                         <img
                             :src="project.image || placeholderSvg"
                             :alt="'Preview: ' + project.title"
                             class="absolute inset-0 w-full h-full object-cover"
                             loading="lazy"
-                            @error="(e) => (e.target.src = placeholderSvg)"
+                            @load="markLoaded(project.id)"
+                            @error="(e) => onImgError(project.id, e)"
                         />
                         <div class="overlay items-center justify-center absolute top-0 left-0 w-full h-full bg-[#181818] bg-opacity-0
                                     hidden group-hover:flex group-hover:bg-opacity-80 transition-all duration-500">
@@ -65,7 +73,7 @@
     </section>
 </template>
 <script setup>
-import { ref, computed } from 'vue';
+import { ref, computed, watch } from 'vue';
 
 import apiRestLaravel from '@/assets/api-rest-laravel.png'
 
@@ -83,6 +91,22 @@ const placeholderSvg = projectCoverSvg('Preview')
 
 function screenshotPreviewUrl(webUrl) {
     return `/api/screenshot?url=${encodeURIComponent(webUrl)}`
+}
+
+const loadedById = ref({})
+
+function markLoaded(id) {
+    loadedById.value[id] = true
+}
+
+function isLoaded(id) {
+    return loadedById.value[id] === true
+}
+
+function onImgError(id, e) {
+    // fallback + evitar spinner infinito
+    e.target.src = placeholderSvg
+    markLoaded(id)
 }
 
 const Projects = ref([
@@ -155,5 +179,16 @@ const filteredProjects = computed(() => {
     }
     return Projects.value.filter(project => project.category.toLocaleLowerCase() === selectedCategory.value.toLocaleLowerCase());
 })
+
+watch(
+    () => filteredProjects.value.map((p) => ({ id: p.id, image: p.image })),
+    (list) => {
+        // Cuando cambia la lista/imagen, reseteamos el loading para ese id.
+        for (const item of list) {
+            loadedById.value[item.id] = false
+        }
+    },
+    { immediate: true }
+)
 
 </script>
